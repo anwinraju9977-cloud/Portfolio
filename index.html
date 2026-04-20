@@ -20,12 +20,11 @@ height:100vh;
 display:flex;
 justify-content:center;
 align-items:center;
-background:#000000;
+background:#000;
 overflow:hidden;
-color:#4b4b4b;
+color:#b3b3b3;
 }
 
-/* dark glow */
 body::before{
 content:"";
 position:absolute;
@@ -46,38 +45,39 @@ transform:translateY(-40px) scale(1.1);
 .container{
 text-align:center;
 z-index:2;
+padding:20px;
 }
 
 .logo{
+font-size:50px;
+font-weight:800;
 color:#d0d0d0;
-}
-
-@keyframes float{
-50%{
-transform:translateY(-10px);
-}
-}
-
-h1{
-font-size:54px;
 margin-bottom:20px;
 }
 
+h1{
+font-size:38px;
+line-height:1.3;
+padding:0 20px;
+margin-bottom:20px;
+}
+
+/* DESKTOP typing animation */
 .typing{
 display:inline-block;
 overflow:hidden;
 white-space:nowrap;
 width:0;
-border-right:3px solid #3a3a3a;
+border-right:3px solid #b3b3b3;
 
 animation:
-typing 4s steps(22,end) forwards,
+typing 4s steps(24,end) forwards,
 blink .8s infinite;
 }
 
 @keyframes typing{
 from{width:0;}
-to{width:800px;}
+to{width:560px;}
 }
 
 @keyframes blink{
@@ -89,25 +89,24 @@ border-color:transparent;
 p{
 margin-top:25px;
 font-size:18px;
-opacity:.8;
-color:#444;
+color:#8f8f8f;
 }
 
 .btn{
 display:inline-block;
-margin-top:40px;
+margin-top:35px;
 padding:15px 40px;
-border:2px solid #222;
+border:2px solid #777777;
 border-radius:50px;
 text-decoration:none;
-color:#3a3a3a;
+color:#d0d0d0;
 background:#050505;
 transition:.4s;
 }
 
 .btn:hover{
-background:#ff0303de;
-color:#000000;
+background:#2d033d;
+color:#ffffff;
 border-color:#000000;
 transform:scale(1.08);
 }
@@ -122,23 +121,18 @@ gap:30px;
 .socials img{
 width:42px;
 height:42px;
-
 filter:grayscale(100%) brightness(0.7);
-
 opacity:.85;
 transition:transform .3s;
 cursor:pointer;
 }
 
-/* lift effect on touch/hover */
 .socials img:hover,
 .socials img:active{
 transform:translateY(-6px) scale(1.18);
-
 animation:colorStay 5s forwards;
 }
 
-/* becomes colored and stays for 5 seconds */
 @keyframes colorStay{
 
 0%{
@@ -158,18 +152,71 @@ filter:grayscale(100%) brightness(0.7);
 }
 }
 
-.socials img:hover{
-transform:translateY(-6px) scale(1.2);
-opacity:1;
-}
-
 footer{
 position:absolute;
 bottom:25px;
 font-size:14px;
 opacity:.5;
-color:#2f2f2f;
+color:#666;
 }
+
+/* MOBILE VERSION */
+@media (max-width:768px){
+
+.logo{
+font-size:42px;
+}
+
+h1{
+font-size:30px;
+animation:fadeIn 2s ease;
+}
+
+/* Disable full typewriter on phone */
+.typing{
+white-space:normal;
+width:auto;
+max-width:100%;
+border-right:3px solid #bbb;
+
+animation:blink .8s infinite;
+}
+
+/* mobile-safe fade */
+@keyframes fadeIn{
+from{
+opacity:0;
+transform:translateY(20px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+p{
+font-size:16px;
+}
+
+.btn{
+padding:12px 28px;
+}
+
+.socials{
+gap:20px;
+}
+
+.socials img{
+width:36px;
+height:36px;
+}
+
+footer{
+font-size:12px;
+}
+
+}
+
 </style>
 </head>
 
@@ -183,7 +230,7 @@ color:#2f2f2f;
 <span class="typing">Portfolio Under Construction</span>
 </h1>
 
-<p>At least I am trying.</p>
+<p>Building something worth visiting.</p>
 
 <a href="mailto:anwinraju9977@gmail.com" class="btn">
 Contact Me
