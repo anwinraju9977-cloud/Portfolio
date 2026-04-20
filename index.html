@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Portfolio</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;800&display=swap');
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:#000000;
+overflow:hidden;
+color:#4b4b4b;
+}
+
+/* dark glow */
+body::before{
+content:"";
+position:absolute;
+width:600px;
+height:600px;
+background:rgba(60,60,60,0.06);
+border-radius:50%;
+filter:blur(80px);
+animation:floatGlow 20s infinite ease-in-out;
+}
+
+@keyframes floatGlow{
+50%{
+transform:translateY(-40px) scale(1.1);
+}
+}
+
+.container{
+text-align:center;
+z-index:2;
+}
+
+.logo{
+color:#d0d0d0;
+}
+
+@keyframes float{
+50%{
+transform:translateY(-10px);
+}
+}
+
+h1{
+font-size:54px;
+margin-bottom:20px;
+}
+
+.typing{
+display:inline-block;
+overflow:hidden;
+white-space:nowrap;
+width:0;
+border-right:3px solid #3a3a3a;
+
+animation:
+typing 4s steps(22,end) forwards,
+blink .8s infinite;
+}
+
+@keyframes typing{
+from{width:0;}
+to{width:800px;}
+}
+
+@keyframes blink{
+50%{
+border-color:transparent;
+}
+}
+
+p{
+margin-top:25px;
+font-size:18px;
+opacity:.8;
+color:#444;
+}
+
+.btn{
+display:inline-block;
+margin-top:40px;
+padding:15px 40px;
+border:2px solid #222;
+border-radius:50px;
+text-decoration:none;
+color:#3a3a3a;
+background:#050505;
+transition:.4s;
+}
+
+.btn:hover{
+background:#ff0303de;
+color:#000000;
+border-color:#000000;
+transform:scale(1.08);
+}
+
+.socials{
+margin-top:35px;
+display:flex;
+justify-content:center;
+gap:30px;
+}
+
+.socials img{
+width:42px;
+height:42px;
+
+filter:grayscale(100%) brightness(0.7);
+
+opacity:.85;
+transition:transform .3s;
+cursor:pointer;
+}
+
+/* lift effect on touch/hover */
+.socials img:hover,
+.socials img:active{
+transform:translateY(-6px) scale(1.18);
+
+animation:colorStay 5s forwards;
+}
+
+/* becomes colored and stays for 5 seconds */
+@keyframes colorStay{
+
+0%{
+filter:grayscale(100%) brightness(0.7);
+}
+
+10%{
+filter:grayscale(0%) brightness(1.2);
+}
+
+90%{
+filter:grayscale(0%) brightness(1.2);
+}
+
+100%{
+filter:grayscale(100%) brightness(0.7);
+}
+}
+
+.socials img:hover{
+transform:translateY(-6px) scale(1.2);
+opacity:1;
+}
+
+footer{
+position:absolute;
+bottom:25px;
+font-size:14px;
+opacity:.5;
+color:#2f2f2f;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="logo">Faaahhhh</div>
+
+<h1>
+<span class="typing">Portfolio Under Construction</span>
+</h1>
+
+<p>At least I am trying.</p>
+
+<a href="mailto:anwinraju9977@gmail.com" class="btn">
+Contact Me
+</a>
+
+<div class="socials">
+
+<a href="https://www.linkedin.com/in/anwinoffline" target="_blank">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg">
+</a>
+
+<a href="mailto:anwinraju9977@gmail.com">
+<img src="https://cdn-icons-png.flaticon.com/512/732/732200.png">
+</a>
+
+<a href="https://instagram.com/a_.nwi._n" target="_blank">
+<img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png">
+</a>
+
+</div>
+
+</div>
+
+<footer>
+© 2026 Anwin • Launching Soon
+</footer>
+
+</body>
+</html>
